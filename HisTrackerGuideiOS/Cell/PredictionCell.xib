@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PredictionCell" rowHeight="128" id="KGk-i7-Jjw" customClass="PredictionCell" customModule="HisTrackerGuideiOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tHe-kr-tlU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KVp-Ij-Afz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tHe-kr-tlU" secondAttribute="trailing" id="B2j-NP-BoW"/>
+                    <constraint firstItem="tHe-kr-tlU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Imt-7C-i8f"/>
+                    <constraint firstItem="KVp-Ij-Afz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XfD-VF-1oc"/>
+                    <constraint firstAttribute="bottom" secondItem="KVp-Ij-Afz" secondAttribute="bottom" id="gEE-fQ-t6r"/>
+                    <constraint firstAttribute="trailing" secondItem="KVp-Ij-Afz" secondAttribute="trailing" id="h10-YI-nNB"/>
+                    <constraint firstItem="tHe-kr-tlU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="j1O-n9-aI0"/>
+                    <constraint firstAttribute="bottom" secondItem="tHe-kr-tlU" secondAttribute="bottom" id="kxP-nf-s7E"/>
+                    <constraint firstItem="KVp-Ij-Afz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lhc-ZC-ltT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="decoUV" destination="tHe-kr-tlU" id="z3i-cb-A9P"/>
+                <outlet property="stackUV" destination="KVp-Ij-Afz" id="mi4-K7-L0a"/>
+            </connections>
+            <point key="canvasLocation" x="301" y="106"/>
+        </tableViewCell>
+    </objects>
+</document>
