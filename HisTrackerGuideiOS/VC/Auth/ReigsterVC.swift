@@ -15,8 +15,6 @@ class ReigsterVC: UIViewController {
     @IBOutlet weak var passwordTF: IconTextField!
     @IBOutlet weak var confirmTF: IconTextField!
     @IBOutlet weak var signUpUB: UIView!
-    @IBOutlet weak var googleUB: UIView!
-    @IBOutlet weak var facebookUB: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +25,6 @@ class ReigsterVC: UIViewController {
         confirmTF.keyboardType = .default
 
         signUpUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapSignUpUB)))
-        googleUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapGoogleUB)))
-        facebookUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFacebookUB)))
     }
     
     // MARK: - Navigation
@@ -85,25 +81,6 @@ class ReigsterVC: UIViewController {
             }
         }
         
-    }
-    
-    @objc func didTapGoogleUB() {
-        FireUtil.instance.loginWithGoogle(vc: self) { [self] (result) in
-            if result {
-                if UserDefaults.isCompleteSpouse {
-                    UserDefaults.isLoggedIn = true
-                    goMainScreen()
-                } else {
-                    goSpouserScreen()
-                }
-            } else {
-                AppUtil.showBanner(type: CRNotifications.error, title: .Failed, content: "Something went wrong")
-            }
-        }
-    }
-    
-    @objc func didTapFacebookUB() {
-        goSpouserScreen()
     }
     
     func goSpouserScreen() {

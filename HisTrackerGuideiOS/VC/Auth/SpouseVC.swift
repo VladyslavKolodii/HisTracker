@@ -14,6 +14,7 @@ class SpouseVC: UIViewController {
     @IBOutlet weak var calendarTF: IconTextField!
     @IBOutlet weak var dateTF: IconTextField!
     @IBOutlet weak var continueUB: UIView!
+    @IBOutlet weak var doLaterUB: UIView!
     
     var user: UserModel?
     
@@ -26,6 +27,7 @@ class SpouseVC: UIViewController {
         
         calendarTF.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCalenderTF)))
         continueUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapContinueUB)))
+        doLaterUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapLaterUB)))
     }
     
 
@@ -69,6 +71,13 @@ class SpouseVC: UIViewController {
         let moodDate = CalendarUtil().convertStringToDate(dateFormat: "EEEE, dd MMMM, yyyy", date: calendarTF.getValue())
         APPUSER.mood = CalendarUtil().convertDateToString(dateFormat: "yyyy-MM-dd", date: moodDate)
         APPUSER.period = Int(dateTF.getValue())!
+        onRegister()
+    }
+    
+    @objc func didTapLaterUB() {
+        APPUSER.wifename = "My Partner"
+        APPUSER.mood = CalendarUtil().convertDateToString(dateFormat: "yyyy-MM-dd", date: Date())
+        APPUSER.period = Int(dateTF.getValue()) ?? 28
         onRegister()
     }
     

@@ -13,8 +13,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTF: IconTextField!
     @IBOutlet weak var passwordTF: IconTextField!
     @IBOutlet weak var signInUB: UIView!
-    @IBOutlet weak var googleUB: UIView!
-    @IBOutlet weak var facebookUB: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +21,6 @@ class LoginVC: UIViewController {
         passwordTF.keyboardType = .default
 
         signInUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapSignInUB)))
-        googleUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapGoogleUB)))
-        facebookUB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapFacebookUB)))
     }
     
 
@@ -82,25 +78,6 @@ class LoginVC: UIViewController {
             return
         }
         onLogin()
-    }
-    
-    @objc func didTapGoogleUB() {
-        FireUtil.instance.loginWithGoogle(vc: self) { [self] (result) in
-            if result {
-                if UserDefaults.isCompleteSpouse {
-                    UserDefaults.isLoggedIn = true
-                    goMainScreen()
-                } else {
-                    goSpouseScreen()
-                }
-            } else {
-                AppUtil.showBanner(type: CRNotifications.error, title: .Failed, content: "Something went wrong")
-            }
-        }
-    }
-    
-    @objc func didTapFacebookUB() {
-        goMainScreen()
     }
     
     func goMainScreen() {
