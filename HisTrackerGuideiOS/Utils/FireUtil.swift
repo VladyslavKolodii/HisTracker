@@ -118,8 +118,9 @@ class FireUtil {
     
     func saveUserStatus(value: [String: Any], completion: @escaping((Bool) -> Void )) {
         let userID = Auth.auth().currentUser?.uid
-        let curDate = CalendarUtil().convertDateToString(dateFormat: "yyyy-MM-dd", date: Date())
-        fireStoreRef.collection("status").document(userID!).collection(curDate).addDocument(data: value) { (error) in
+        let curDate = CalendarUtil().convertDateToString(dateFormat: "yyyy-MM-dd hh:mm:ss", date: Date())
+        let data: [String: Any] = [curDate: value]
+        fireStoreRef.collection("status").document(userID!).setData(data, merge: true) { (error) in
             if error != nil {
                 completion(false)
             } else {
