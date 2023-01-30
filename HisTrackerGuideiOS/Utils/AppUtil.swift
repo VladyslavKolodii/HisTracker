@@ -38,7 +38,6 @@ class AppUtil {
         if mode == 0 {
             return .MENSTURATION
         }
-        
         if diff > 0 {
             if mode < 6 {
                 return .MENSTURATION
@@ -56,6 +55,14 @@ class AppUtil {
                 return .NONE
             }
         }
-        
+    }
+    
+    static func getMoodTypeStartDate(moodDate: Date) -> [Date] {
+        var dateStartArr = [Date]()
+        dateStartArr.append(CalendarUtil().getDateFromDate(diff: 14, date: moodDate))/// ovulation
+        dateStartArr.append(moodDate)/// menstrual
+        dateStartArr.append(CalendarUtil().getDateFromDate(diff: 6, date: moodDate))/// luteal
+        dateStartArr.append(CalendarUtil().getDateFromDate(diff: 20, date: moodDate))/// follicular
+        return dateStartArr
     }
 }

@@ -35,7 +35,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func didTapForgotUB(_ sender: UIButton) {
-        
+//        fatalError()
     }
     
     func onLogin() {
@@ -44,13 +44,21 @@ class LoginVC: UIViewController {
             if result {
                 AppUtil.onHideProgressView(self)
                 AppUtil.showBanner(type: CRNotifications.success, title: .Success, content: "Successed.")
-                if UserDefaults.isCompleteSpouse {
-                    UserDefaults.isLoggedIn = true
-                    goMainScreen()
-                } else {
-                    APPUSER.email = emailTF.getValue()
-                    APPUSER.name = UserDefaults.userName
-                    goSpouseScreen()
+                FireUtil.instance.getUserInfo { (user, result) in
+                    if result {
+                        UserDefaults.userName = user.name
+                        if user.mood.isEmpty {
+                            APPUSER.email = emailTF.getValue()
+                            APPUSER.name = user.name
+                            goSpouseScreen()
+                        } else {
+                            UserDefaults.isCompleteSpouse = true
+                            UserDefaults.isLoggedIn = true
+                            goMainScreen()
+                        }
+                    } else {
+                        AppUtil.showBanner(type: CRNotifications.error, title: .Failed, content: "Something went wrong")
+                    }
                 }
                 
             } else {

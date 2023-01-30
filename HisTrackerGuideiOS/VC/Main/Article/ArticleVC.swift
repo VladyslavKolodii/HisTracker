@@ -54,7 +54,7 @@ class ArticleVC: UIViewController {
         let gradientUV = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         let gradient = CAGradientLayer()
         gradient.frame = gradientUV.bounds
-        gradient.colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor(named: "redGradientStart")!.cgColor]
+        gradient.colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor.articleBackgroundColor.cgColor]
         self.view.layer.insertSublayer(gradient, at: 0)
     }
     
@@ -71,11 +71,16 @@ class ArticleVC: UIViewController {
     }
     
     func getCarouselData() {
-        for i in 10...19 {
-            let model = CarouselModel(image: UIImage(named: "sample_woman_\(i)")!, isRead: i % 2 == 0)
-            carouselArr.append(model)
+//        for i in 10...19 {
+//            let model = CarouselModel(image: UIImage(named: "sample_woman_\(i)")!, isRead: i % 2 == 0)
+//            carouselArr.append(model)
+//        }
+//        carouselCV.reloadData()
+        carouselArr.removeAll()
+        FireUtil.instance.getArticles { (carousels) in
+            self.carouselArr.append(contentsOf: carousels)
+            self.carouselCV.reloadData()
         }
-        carouselCV.reloadData()
     }
     
     @IBAction func didTapTabUB(_ sender: UIButton) {
@@ -133,7 +138,6 @@ class ArticleVC: UIViewController {
         }
     }
     
-    
 }
 
 //MARK: - CollectionView Data Source, Delegate
@@ -158,6 +162,5 @@ extension ArticleVC: UICollectionViewDataSource {
         cell.model = carouselArr[indexPath.row]
         return cell
     }
-    
     
 }

@@ -1,6 +1,0 @@
-framework module Pods_HisTrackerGuideiOS {
-  umbrella header "Pods-HisTrackerGuideiOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

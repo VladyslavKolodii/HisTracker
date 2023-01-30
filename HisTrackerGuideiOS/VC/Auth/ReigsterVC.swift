@@ -71,10 +71,17 @@ class ReigsterVC: UIViewController {
         APPUSER.email = emailTF.getValue()
         AppUtil.onShowProgressView(self)
         FireUtil.instance.registerUser(email: APPUSER.email, password: passwordTF.getValue()) { [self] (result) in
+            
             if result {
-                AppUtil.onHideProgressView(self)
-                AppUtil.showBanner(type: CRNotifications.success, title: .Success, content: "Successed.")
-                goSpouserScreen()
+                FireUtil.instance.saveUserInfo(user: APPUSER) { (res) in
+                    AppUtil.onHideProgressView(self)
+                    if res {
+                        AppUtil.showBanner(type: CRNotifications.success, title: .Success, content: "Successed.")
+                        goSpouserScreen()
+                    } else {
+                        AppUtil.showBanner(type: CRNotifications.error, title: .Failed, content: "Something went wrong")
+                    }
+                }
             } else {
                 AppUtil.onHideProgressView(self)
                 AppUtil.showBanner(type: CRNotifications.error, title: .Failed, content: "Something went wrong")

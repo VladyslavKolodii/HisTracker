@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleCell: UICollectionViewCell {
     
@@ -14,11 +15,15 @@ class ArticleCell: UICollectionViewCell {
     @IBOutlet weak var markUV: UIView!
     @IBOutlet weak var markStatusUV: UIView!
     @IBOutlet weak var checkUIMG: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var name: UILabel!
     
     var model: CarouselModel! {
         didSet {
-            userImg.image = model.image
+            userImg.sd_setImage(with: URL(string: model.imageUrl), placeholderImage: UIImage(named: "sample_woman_11")!)
             checkUIMG.isHidden = !model.isRead
+            title.text = model.title
+            name.text = model.name
             if model.isRead {
                 markUV.backgroundColor = UIColor(named: "mainBlue")
                 markStatusUV.layer.borderWidth = 0.0

@@ -55,10 +55,13 @@
 		45528BB7273FCFFD00F1337F /* MoodCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45528BB6273FCFFD00F1337F /* MoodCalendarModel.swift */; };
 		45528BBB273FE56700F1337F /* CalendarMoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45528BB9273FE56700F1337F /* CalendarMoodCell.swift */; };
 		45528BBC273FE56700F1337F /* CalendarMoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45528BBA273FE56700F1337F /* CalendarMoodCell.xib */; };
-		45AF2D47273EF49E009462D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45AF2D46273EF49E009462D1 /* GoogleService-Info.plist */; };
+		4573185A275AD66800368655 /* UIWindow+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45731859275AD66800368655 /* UIWindow+Ext.swift */; };
+		45731862275AD75800368655 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45731861275AD75800368655 /* bell.mp3 */; };
+		45731876275B85F800368655 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45731875275B85F800368655 /* GoogleService-Info.plist */; };
 		45AF2D5E273EFFE6009462D1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF2D5D273EFFE6009462D1 /* UserModel.swift */; };
 		45AF2D77273F0BF8009462D1 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF2D76273F0BF8009462D1 /* String+Ext.swift */; };
 		45AF2D7B273F10F7009462D1 /* FireUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AF2D7A273F10F7009462D1 /* FireUtil.swift */; };
+		45CFE6F5276FC87600D23D0F /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFE6F4276FC87600D23D0F /* UIColor+Ext.swift */; };
 		45D8866D273E7E540081E322 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D8866C273E7E540081E322 /* SettingVC.swift */; };
 		45D88671273E7F110081E322 /* EditDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D88670273E7F110081E322 /* EditDateVC.swift */; };
 		45D88674273E8EEA0081E322 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D88673273E8EEA0081E322 /* NotificationVC.swift */; };
@@ -114,14 +117,16 @@
 		4546DB80273D3412003AD0F2 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		4546DB83273D54D4003AD0F2 /* ArticleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleVC.swift; sourceTree = "<group>"; };
 		45528BAE273F325000F1337F /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
-		45528BB4273FA62A00F1337F /* HisTrackerGuideiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HisTrackerGuideiOS.entitlements; path = ../../../.Trash/HisTrackerGuideiOS.entitlements; sourceTree = "<group>"; };
 		45528BB6273FCFFD00F1337F /* MoodCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarModel.swift; sourceTree = "<group>"; };
 		45528BB9273FE56700F1337F /* CalendarMoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMoodCell.swift; sourceTree = "<group>"; };
 		45528BBA273FE56700F1337F /* CalendarMoodCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarMoodCell.xib; sourceTree = "<group>"; };
-		45AF2D46273EF49E009462D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45731859275AD66800368655 /* UIWindow+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Ext.swift"; sourceTree = "<group>"; };
+		45731861275AD75800368655 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		45731875275B85F800368655 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45AF2D5D273EFFE6009462D1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		45AF2D76273F0BF8009462D1 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		45AF2D7A273F10F7009462D1 /* FireUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireUtil.swift; sourceTree = "<group>"; };
+		45CFE6F4276FC87600D23D0F /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		45D8866C273E7E540081E322 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		45D88670273E7F110081E322 /* EditDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDateVC.swift; sourceTree = "<group>"; };
 		45D88673273E8EEA0081E322 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
@@ -162,7 +167,6 @@
 		45160490273B0CCD00361FA3 /* HisTrackerGuideiOS */ = {
 			isa = PBXGroup;
 			children = (
-				45528BB4273FA62A00F1337F /* HisTrackerGuideiOS.entitlements */,
 				4531247A273C77A400893DCD /* Cell */,
 				451604E8273BB61F00361FA3 /* CustomUV */,
 				451604CE273B30CA00361FA3 /* Model */,
@@ -180,7 +184,8 @@
 		451604A6273B0CEB00361FA3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				45AF2D46273EF49E009462D1 /* GoogleService-Info.plist */,
+				45731875275B85F800368655 /* GoogleService-Info.plist */,
+				45731861275AD75800368655 /* bell.mp3 */,
 				45160491273B0CCD00361FA3 /* AppDelegate.swift */,
 				45160493273B0CCD00361FA3 /* SceneDelegate.swift */,
 				4516049F273B0CD200361FA3 /* Info.plist */,
@@ -198,6 +203,8 @@
 				45449FC2273E4E4B0048B377 /* UIFont+Ext.swift */,
 				45449FD0273E69910048B377 /* UILable+Ext.swift */,
 				45AF2D76273F0BF8009462D1 /* String+Ext.swift */,
+				45731859275AD66800368655 /* UIWindow+Ext.swift */,
+				45CFE6F4276FC87600D23D0F /* UIColor+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -388,6 +395,7 @@
 				4516048B273B0CCD00361FA3 /* Frameworks */,
 				4516048C273B0CCD00361FA3 /* Resources */,
 				F37EDB467D47A192D05443B5 /* [CP] Embed Pods Frameworks */,
+				453EA88C2768C3BA00D3FBF6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -440,16 +448,17 @@
 				4516049E273B0CD200361FA3 /* LaunchScreen.storyboard in Resources */,
 				4516049B273B0CD200361FA3 /* Assets.xcassets in Resources */,
 				45449FBF273DDD490048B377 /* PredictionCell.xib in Resources */,
+				45731862275AD75800368655 /* bell.mp3 in Resources */,
 				451604F4273BB68E00361FA3 /* IconTextField.xib in Resources */,
 				45449FCB273E4F910048B377 /* Montserrat-Semibold.ttf in Resources */,
 				4531247E273C77CE00893DCD /* CalendarCell.xib in Resources */,
+				45731876275B85F800368655 /* GoogleService-Info.plist in Resources */,
 				45449FAB273D76D80048B377 /* ArticleCell.xib in Resources */,
 				451604DD273BA6C100361FA3 /* Auth.storyboard in Resources */,
 				451604B4273B138C00361FA3 /* Landing.storyboard in Resources */,
 				45449FC7273E4F8A0048B377 /* Montserrat-Medium.ttf in Resources */,
 				45160499273B0CCD00361FA3 /* Main.storyboard in Resources */,
 				45528BBC273FE56700F1337F /* CalendarMoodCell.xib in Resources */,
-				45AF2D47273EF49E009462D1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +486,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		453EA88C2768C3BA00D3FBF6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F37EDB467D47A192D05443B5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -523,6 +551,7 @@
 				45528BBB273FE56700F1337F /* CalendarMoodCell.swift in Sources */,
 				451604D0273B30E200361FA3 /* OnboardingModel.swift in Sources */,
 				4546DB81273D3412003AD0F2 /* CalendarVC.swift in Sources */,
+				45CFE6F5276FC87600D23D0F /* UIColor+Ext.swift in Sources */,
 				45AF2D77273F0BF8009462D1 /* String+Ext.swift in Sources */,
 				45449FBA273DD44E0048B377 /* PredictionModel.swift in Sources */,
 				451604EB273BB64700361FA3 /* IconTextField.swift in Sources */,
@@ -532,6 +561,7 @@
 				4531248B273C932900893DCD /* CalendarModel.swift in Sources */,
 				45449FB4273DC2AD0048B377 /* PredictionVC.swift in Sources */,
 				45AF2D7B273F10F7009462D1 /* FireUtil.swift in Sources */,
+				4573185A275AD66800368655 /* UIWindow+Ext.swift in Sources */,
 				45449FBE273DDD490048B377 /* PredictionCell.swift in Sources */,
 				451604C2273B188100361FA3 /* LandingVC.swift in Sources */,
 				451604E1273BA82200361FA3 /* AuthNavVC.swift in Sources */,
@@ -601,7 +631,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -692,7 +722,8 @@
 				CODE_SIGN_ENTITLEMENTS = HisTrackerGuideiOS/HisTrackerGuideiOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43H8QCC3Q9;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 8Z2XD524Z5;
 				INFOPLIST_FILE = HisTrackerGuideiOS/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -715,7 +746,8 @@
 				CODE_SIGN_ENTITLEMENTS = HisTrackerGuideiOS/HisTrackerGuideiOS.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 43H8QCC3Q9;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 8Z2XD524Z5;
 				INFOPLIST_FILE = HisTrackerGuideiOS/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

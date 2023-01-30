@@ -130,4 +130,8 @@ class CalendarUtil {
         let strDate = df.string(from: date)
         return strDate
     }
+    
+    func getDateFromDate(diff: Int, date: Date) -> Date {
+        return Calendar.current.date(byAdding: .day, value: diff, to: date)!
+    }
 }

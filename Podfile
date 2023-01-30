@@ -12,7 +12,9 @@ target 'HisTrackerGuideiOS' do
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   pod 'CRNotifications'
-  pod 'GoogleSignIn'
   pod 'DropDown'
+  pod 'SDWebImage'
 end

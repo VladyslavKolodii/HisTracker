@@ -8,7 +8,6 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
-import GoogleSignIn
 import Firebase
 
 class FireUtil {
@@ -22,11 +21,15 @@ class FireUtil {
             if error != nil {
                 completion([], [], [])
             } else {
-                let data: [String: Any] = (snapshot?.data())!
-                let titleArr: [String] = data["title"] as! [String]
-                let detailArr: [String] = data["detail"] as! [String]
-                let statusArr: [String] = data["status"] as! [String]
-                completion(titleArr, detailArr, statusArr)
+                if let data = snapshot?.data() {
+                    let titleArr: [String] = data["title"] as! [String]
+                    let detailArr: [String] = data["detail"] as! [String]
+                    let statusArr: [String] = data["status"] as! [String]
+                    completion(titleArr, detailArr, statusArr)
+                } else {
+                    completion([], [], [])
+                }
+                
             }
         }
     }
@@ -58,28 +61,28 @@ class FireUtil {
     }
     
     func loginWithGoogle(vc: UIViewController, completion: @escaping (Bool) -> Void) {
-        guard let clientID = FirebaseApp.app()?.options.clientID else {return}
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: vc) { (user, error) in
-            if error != nil {
-                completion(false)
-                return
-            }
-            guard let authentication = user?.authentication, let idToken = authentication.idToken else {return}
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential) { (result, err) in
-                if err != nil {
-                    completion(false)
-                    return
-                } else {
-                    let user: GIDGoogleUser = GIDSignIn.sharedInstance.currentUser!
-                    APPUSER.email = user.profile?.email ?? ""
-                    APPUSER.name = user.profile?.name ?? ""
-                    APPUSER.userID = result!.user.uid
-                    completion(true)
-                }
-            }
-        }
+//        guard let clientID = FirebaseApp.app()?.options.clientID else {return}
+//        let config = GIDConfiguration(clientID: clientID)
+//        GIDSignIn.sharedInstance.signIn(with: config, presenting: vc) { (user, error) in
+//            if error != nil {
+//                completion(false)
+//                return
+//            }
+//            guard let authentication = user?.authentication, let idToken = authentication.idToken else {return}
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+//            Auth.auth().signIn(with: credential) { (result, err) in
+//                if err != nil {
+//                    completion(false)
+//                    return
+//                } else {
+//                    let user: GIDGoogleUser = GIDSignIn.sharedInstance.currentUser!
+//                    APPUSER.email = user.profile?.email ?? ""
+//                    APPUSER.name = user.profile?.name ?? ""
+//                    APPUSER.userID = result!.user.uid
+//                    completion(true)
+//                }
+//            }
+//        }
     }
     
     func saveUserInfo(user: UserModel, completion: @escaping (Bool) -> Void) {
@@ -125,6 +128,22 @@ class FireUtil {
                 completion(false)
             } else {
                 completion(true)
+            }
+        }
+    }
+    
+    func getArticles(completion: @escaping([CarouselModel]) -> Void) {
+        fireStoreRef.collection("articles").getDocuments { (snapshot, err) in
+            if let err = err {
+                print("Error happened. \(err)")
+            } else {
+                var carousels: [CarouselModel] = [CarouselModel]()
+                for item in snapshot!.documents {
+                    let data: [String: Any] = item.data()
+                    let carousel: CarouselModel = CarouselModel(data: data)
+                    carousels.append(carousel)
+                }
+                completion(carousels)
             }
         }
     }

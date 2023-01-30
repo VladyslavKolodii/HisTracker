@@ -9,7 +9,7 @@ import Foundation
 
 extension UserDefaults {
     private enum Keys: String {
-        case isPassedLanding, isLoggedIn, isCompleteSpose, fcmToken, userName
+        case isPassedLanding, isLoggedIn, isCompleteSpose, fcmToken, userName, notificationTime, notificationTypes
     }
     
     class var isPassedLanding: Bool {
@@ -52,6 +52,22 @@ extension UserDefaults {
             return self.standard.string(forKey: Keys.userName.rawValue)!
         } set {
             self.standard.set(newValue, forKey: Keys.userName.rawValue)
+        }
+    }
+    
+    class var notificationDate: Int {
+        get {
+            return self.standard.integer(forKey: Keys.notificationTime.rawValue)
+        } set {
+            self.standard.setValue(newValue, forKey: Keys.notificationTime.rawValue)
+        }
+    }
+    
+    class var notificationType: [Int] {
+        get {
+            return self.standard.object(forKey: Keys.notificationTypes.rawValue) as? [Int] ?? []
+        } set {
+            self.standard.setValue(newValue, forKey: Keys.notificationTypes.rawValue)
         }
     }
 }

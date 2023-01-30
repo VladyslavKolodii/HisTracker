@@ -8,13 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="montserrat_bold.ttf">
+        <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
-        <array key="montserrat_medium.ttf">
+        <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
-        <array key="montserrat_semibold.ttf">
+        <array key="Montserrat-Semibold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
     </customFonts>
@@ -151,6 +151,8 @@
                 <outlet property="decoUV" destination="OKA-xG-otW" id="7l2-hQ-wyK"/>
                 <outlet property="markStatusUV" destination="pmJ-3M-Oxb" id="9x3-lv-74b"/>
                 <outlet property="markUV" destination="1F3-mk-fuJ" id="hZy-Fv-jfL"/>
+                <outlet property="name" destination="dZd-Z4-WsX" id="jJv-Ty-vrj"/>
+                <outlet property="title" destination="dXm-Dg-M5p" id="f3U-mZ-7pZ"/>
                 <outlet property="userImg" destination="Ih4-KF-nCQ" id="jin-NI-Q7q"/>
             </connections>
             <point key="canvasLocation" x="397.82608695652175" y="316.40625"/>

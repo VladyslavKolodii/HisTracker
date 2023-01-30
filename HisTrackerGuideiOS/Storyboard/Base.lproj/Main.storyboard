@@ -372,7 +372,7 @@
                                                             <action selector="didtapJessicaUB:" destination="nE0-tA-FRh" eventType="touchUpInside" id="eBW-Jq-QR4"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWI-fH-PHH">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWI-fH-PHH">
                                                         <rect key="frame" x="0.0" y="47" width="194" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="d8v-rF-Wks"/>
@@ -389,7 +389,7 @@
                                                             <action selector="didtapJessicaUB:" destination="nE0-tA-FRh" eventType="touchUpInside" id="KWo-z1-LqT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-GK-XMl">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua8-GK-XMl">
                                                         <rect key="frame" x="0.0" y="94" width="163" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="WuJ-sK-O7Z"/>
@@ -406,7 +406,7 @@
                                                             <action selector="didtapJessicaUB:" destination="nE0-tA-FRh" eventType="touchUpInside" id="9YD-SH-H8i"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFR-lE-5od">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFR-lE-5od">
                                                         <rect key="frame" x="0.0" y="141" width="185" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="1jl-ve-qTB"/>
@@ -594,7 +594,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="U5q-dT-cvp"/>
                     <connections>
+                        <outlet property="follicularUB" destination="GFR-lE-5od" id="TX7-jd-n1T"/>
+                        <outlet property="lutealUB" destination="Ua8-GK-XMl" id="or2-lz-6lY"/>
+                        <outlet property="menstrualUB" destination="rWI-fH-PHH" id="2EH-Cz-d5w"/>
                         <outlet property="oneDayUB" destination="tn3-7e-TqV" id="ATD-Om-rmm"/>
+                        <outlet property="ovulationUB" destination="SkO-BD-p2z" id="zn3-tI-Sqw"/>
                         <outlet property="threeDayUB" destination="trF-d6-hGK" id="3kj-n1-Jbe"/>
                         <outlet property="timeTF" destination="Zg2-Aj-GGD" id="mVY-86-gfR"/>
                         <outlet property="twoDayUB" destination="I9A-O4-Th4" id="UIA-cP-s6h"/>
@@ -794,7 +798,7 @@
                                                     <constraint firstItem="7yR-ff-Ji2" firstAttribute="centerX" secondItem="1eA-aK-RIk" secondAttribute="centerX" id="xd9-aw-eBf"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKX-P5-rIy">
+                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKX-P5-rIy">
                                                 <rect key="frame" x="28" y="371.5" width="319" height="203.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23m-O3-ShI">
@@ -949,7 +953,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-qQ-TtT">
+                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzs-qQ-TtT">
                                                 <rect key="frame" x="28" y="587" width="319" height="103"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8w-py-ayd">

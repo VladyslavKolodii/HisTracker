@@ -37,10 +37,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         OnboardingModel(title: titleArr[1], subTitle: detailArr[1], image: UIImage.onboarding2),
                         OnboardingModel(title: titleArr[2], subTitle: detailArr[2], image: UIImage.onboarding3),
                     ]
-                    let vc = LandingVC.instantiatFromAppStoryboard(appStoryboard: .Landing)
-                    window?.rootViewController = UINavigationController(rootViewController: vc)
-                    window?.makeKeyAndVisible()
+                    
+                } else {
+                    LANDINGMODELS = [
+                        OnboardingModel(title: "", subTitle: "", image: UIImage.onboarding1),
+                        OnboardingModel(title: "", subTitle: "", image: UIImage.onboarding2),
+                        OnboardingModel(title: "", subTitle: "", image: UIImage.onboarding3),
+                    ]
                 }
+                let vc = LandingVC.instantiatFromAppStoryboard(appStoryboard: .Landing)
+                window?.rootViewController = UINavigationController(rootViewController: vc)
+                window?.makeKeyAndVisible()
             }
         }
         
@@ -73,7 +80,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
 }
 
